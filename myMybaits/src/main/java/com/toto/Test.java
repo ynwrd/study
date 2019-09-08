@@ -15,5 +15,6 @@ public class Test {
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(Appconfig.class);
         IndexService indexDao = annotationConfigApplicationContext.getBean(IndexService.class);
         indexDao.getId();
+        indexDao.updateInfo();
     }
 }

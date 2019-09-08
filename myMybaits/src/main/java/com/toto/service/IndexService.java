@@ -13,4 +13,8 @@ public class IndexService {
         System.out.println("service 调用....");
         return indexDao.getNameById("id");
     }
+    public void updateInfo(){
+        System.out.println("调用了修改接口");
+        indexDao.updateInfo("233");
+    }
 }
