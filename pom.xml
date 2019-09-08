@@ -12,6 +12,7 @@
         <module>aop</module>
         <module>ioc</module>
         <module>postProcessor</module>
+        <module>myMybaits</module>
     </modules>
 
     <properties>
