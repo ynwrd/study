@@ -13,6 +13,7 @@
         <module>ioc</module>
         <module>postProcessor</module>
         <module>myMybaits</module>
+        <module>spring-log</module>
     </modules>
 
     <properties>
