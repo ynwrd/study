@@ -1,6 +1,8 @@
 package com.toto.config;
 
+import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.datasource.DataSourceFactory;
+import org.apache.ibatis.logging.log4j.Log4jImpl;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
@@ -29,6 +31,9 @@ public class AppConfig {
     @Bean
     public SqlSessionFactoryBean sessionFactoryBean(){
         SqlSessionFactoryBean ssfb = new SqlSessionFactoryBean();
+        org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
+        configuration.setLogImpl(Log4jImpl.class);
+        ssfb.setConfiguration(configuration);
         ssfb.setDataSource(getDataSource());//使用了@configuration以后这个方法被代理了，所以可以不用方法来注入
         return ssfb;
     }
