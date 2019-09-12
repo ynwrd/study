@@ -8,7 +8,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * 自定义注解：扫描mapper
+ * 自定义注解：注册BeanDefinition
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Import({TotoBDRegistrar.class})

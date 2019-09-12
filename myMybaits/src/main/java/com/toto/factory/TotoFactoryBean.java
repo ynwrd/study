@@ -1,12 +1,8 @@
 package com.toto.factory;
 
-import com.toto.Test;
-import com.toto.dao.IndexDao;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.beans.factory.FactoryBean;
-import org.springframework.stereotype.Component;
-import sun.reflect.generics.tree.ReturnType;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationHandler;
