@@ -9,7 +9,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class Test {
     public static void main(String[] args) {
+//        org.apache.ibatis.logging.LogFactory.useLog4JLogging();
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
-        System.out.println(annotationConfigApplicationContext.getBean(RoomService.class).getRoomList());
+        RoomService roomService = annotationConfigApplicationContext.getBean(RoomService.class);
+        System.out.println(roomService.getRoomList());
     }
 }
