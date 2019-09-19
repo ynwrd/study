@@ -12,4 +12,8 @@ public class UserService {
         System.out.println("user print by service");
         userDao.queryList();
     }
+    public void query(String ak47,String OO7){
+        System.out.println(OO7+"拿着"+ak47+"去运行");
+        userDao.queryList();
+    }
 }

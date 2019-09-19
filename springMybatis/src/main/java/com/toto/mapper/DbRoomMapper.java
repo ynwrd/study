@@ -10,6 +10,10 @@ import java.util.Map;
 
 public interface DbRoomMapper {
 
-    @Select("select * from db_room")
+    /**
+     * 可以传多条sql
+     * @return
+     */
+    @Select({"select * from db_room"})
     List<Map<String,Object>> queryList();
 }

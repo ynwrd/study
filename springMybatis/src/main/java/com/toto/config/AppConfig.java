@@ -29,12 +29,12 @@ public class AppConfig {
     }
 
     @Bean
-    public SqlSessionFactoryBean sessionFactoryBean(DataSource dataSource){
+    public SqlSessionFactoryBean sessionFactoryBean(){
         SqlSessionFactoryBean ssfb = new SqlSessionFactoryBean();
         org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
         configuration.setLogImpl(Log4jImpl.class);
         ssfb.setConfiguration(configuration);
-        ssfb.setDataSource(dataSource);//使用了@configuration以后这个方法被代理了，所以可以不用方法来注入
+        ssfb.setDataSource(getDataSource());//使用了@configuration以后这个方法被代理了，所以可以不用方法来注入
         return ssfb;
     }
 
