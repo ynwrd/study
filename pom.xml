@@ -15,6 +15,7 @@
         <module>myMybaits</module>
         <module>spring-log</module>
         <module>springMybatis</module>
+        <module>observer</module>
     </modules>
 
     <properties>
