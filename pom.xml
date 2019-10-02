@@ -16,6 +16,7 @@
         <module>spring-log</module>
         <module>springMybatis</module>
         <module>observer</module>
+        <module>springcloudStudy</module>
     </modules>
 
     <properties>
