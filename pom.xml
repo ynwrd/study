@@ -17,6 +17,7 @@
         <module>springMybatis</module>
         <module>observer</module>
         <module>springcloudStudy</module>
+        <module>springboot</module>
     </modules>
 
     <properties>

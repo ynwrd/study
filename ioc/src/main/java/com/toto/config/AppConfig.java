@@ -11,7 +11,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
+import javax.xml.transform.sax.TemplatesHandler;
 import java.sql.Driver;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Configuration加与不加的区别：
@@ -43,5 +46,7 @@ public class AppConfig {
     public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory){
         return new SqlSessionTemplate(sqlSessionFactory);
     }
+
+
 
 }
