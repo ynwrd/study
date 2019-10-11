@@ -18,6 +18,7 @@
         <module>order</module>
         <module>order2</module>
         <module>eureka3001</module>
+        <module>eureka3002</module>
     </modules>
 
     <dependencyManagement>
