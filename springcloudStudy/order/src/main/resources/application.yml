@@ -4,12 +4,13 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:3000/eureka
+      defaultZone: http://www.eureka3000.com:3000/eureka,http://www.eureka3001.com:3001/eureka,http://www.eureka3002.com:3002/eureka
   instance:
     instance-id: orderClient
     prefer-ip-address: true #是否显示IP地址
     leaseRenewalIntervalInSeconds: 10 #eureka客户需要多长时间发送心跳给eureka服务器，表明它仍然活着,默认为30 秒 (与下面配置的单位都是秒)
     leaseExpirationDurationInSeconds: 30 #Eureka服务器在接收到实例的最后一次发出的心跳后，需要等待多久才可以将此实例删除，默认为90秒
+
 spring:
   application:
-    name: order
+    name: ORDER-SERVICE
