@@ -1,5 +1,6 @@
 package com.toto.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.toto.resp.Resp;
 import com.toto.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,12 +39,22 @@ public class IndexController {
     }
 
     @GetMapping("getOrder")
+    @HystrixCommand(fallbackMethod = "getOrderError")
     public Resp getOrder(){
         return Resp.OK(restTemplate.getForObject(url+"/getOrder",Map.class));
     }
 
     @GetMapping("getOrderByService")
+    @HystrixCommand(fallbackMethod = "getOrderError")
     public Resp getOrderByService(){
         return Resp.OK(orderService.getOrder());
+    }
+
+    /**
+     * 降级方法
+     * @return
+     */
+    public Resp getOrderError(){
+        return Resp.error();
     }
 }

@@ -15,6 +15,6 @@ public class OrderController {
         Map<String,String> order = new HashMap<>();
         order.put("orderId","1");
         order.put("orderName","服务器1年服务");
-        return order;
+        throw new RuntimeException("程序出问题了");
     }
 }
