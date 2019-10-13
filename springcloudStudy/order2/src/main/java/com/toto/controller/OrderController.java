@@ -13,8 +13,8 @@ public class OrderController {
     @RequestMapping("getOrder")
     public Map<String,String> getOrder(){
         Map<String,String> order = new HashMap<>();
-        order.put("orderId","1");
-        order.put("orderName","服务器1年服务");
+        order.put("orderId","2");
+        order.put("orderName","服务器2年服务");
         return order;
     }
 }
