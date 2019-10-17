@@ -1,6 +1,7 @@
 package com.toto.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.toto.resp.Resp;
 import com.toto.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,8 +46,25 @@ public class IndexController {
     }
 
     @GetMapping("getOrderByService")
-    @HystrixCommand(fallbackMethod = "getOrderError")
+    @HystrixCommand(fallbackMethod = "getOrderError") //如果出错会自动走fallback的方法
     public Resp getOrderByService(){
+        return Resp.OK(orderService.getOrder());
+    }
+
+    /**
+     * 限流：hystrix 通过线程词的方式来管理你的微服务调用，它默认是10个线程（大小）管理你的微服务
+     * 你可以给某个微服务开辟新的线程池
+     * coreSize 表示并发最大线程数，value表示值 相当于key-value
+     * maxQueueSize 表示队列数，当设置为-1时，会使用SynchronousQueue 默认-1
+     * @return
+     */
+    @GetMapping("getOrderByService2")
+    @HystrixCommand(fallbackMethod = "getOrderError",
+    threadPoolKey = "order",threadPoolProperties = {
+            @HystrixProperty(name ="coreSize",value = "2"),
+            @HystrixProperty(name="maxQueueSize",value = "1")
+    })
+    public Resp getOrderByxl(){
         return Resp.OK(orderService.getOrder());
     }
 
@@ -55,6 +73,6 @@ public class IndexController {
      * @return
      */
     public Resp getOrderError(){
-        return Resp.error();
+        return Resp.error("服务器连接异常");
     }
 }

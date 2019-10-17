@@ -14,3 +14,17 @@ spring:
   application:
     name: userClient
 
+# feign整合hystrix 开启配置
+feign:
+  hystrix:
+    enabled: true
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+#            timeoutInMilliseconds: 4000
+            timeoutInMilliseconds: 3000 # 设置超时时间走降级方法

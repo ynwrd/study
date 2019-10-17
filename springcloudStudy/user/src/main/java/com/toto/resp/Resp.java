@@ -24,6 +24,12 @@ public class Resp<T> {
         resp.setMsg("操作失败");
         return resp;
     }
+    public static Resp error(String msg){
+        Resp resp = new Resp();
+        resp.setCode(500);
+        resp.setMsg(msg);
+        return resp;
+    }
     public Integer getCode() {
         return code;
     }
