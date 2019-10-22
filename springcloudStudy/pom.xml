@@ -19,7 +19,6 @@
         <module>order2</module>
         <module>eureka3001</module>
         <module>eureka3002</module>
-        <module>zuul</module>
     </modules>
 
     <dependencyManagement>

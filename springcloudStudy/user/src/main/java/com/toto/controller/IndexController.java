@@ -51,6 +51,7 @@ public class IndexController {
         return Resp.OK(orderService.getOrder());
     }
 
+
     /**
      * 限流：hystrix 通过线程词的方式来管理你的微服务调用，它默认是10个线程（大小）管理你的微服务
      * 你可以给某个微服务开辟新的线程池
