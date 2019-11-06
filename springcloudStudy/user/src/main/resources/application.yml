@@ -28,3 +28,9 @@ hystrix:
           thread:
 #            timeoutInMilliseconds: 4000
             timeoutInMilliseconds: 3000 # 设置超时时间走降级方法
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
