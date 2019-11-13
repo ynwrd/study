@@ -1,0 +1,16 @@
+management:
+  metrics:
+    web:
+      server:
+        autoTimeRequest: false
+
+server:
+  port: 9001
+
+zipkin:
+  storage:
+    type: elasticsearch
+    elasticsearch:
+      cluster: elasticsearch
+      hosts: http://localhost:9200
+      index: zipkin

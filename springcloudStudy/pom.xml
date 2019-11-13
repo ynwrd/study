@@ -21,6 +21,7 @@
         <module>eureka3002</module>
         <module>zuul</module>
         <module>HystrixDashbord</module>
+        <module>zipkin-server</module>
     </modules>
 
     <dependencyManagement>
